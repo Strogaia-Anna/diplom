@@ -1,0 +1,32 @@
+{
+  "name": "diplom",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Strogaia-Anna/diplom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Strogaia-Anna/diplom/issues"
+  },
+  "homepage": "https://github.com/Strogaia-Anna/diplom#readme",
+  "description": "",
+  "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-jest": "^30.2.0",
+    "babel-loader": "^10.0.0",
+    "bootstrap": "^5.3.8",
+    "jest": "^30.2.0",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "core-js": "^3.47.0"
+  }
+}

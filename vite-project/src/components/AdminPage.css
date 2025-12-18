@@ -1,0 +1,29 @@
+.hall {
+    width: 50px;
+    height: 25px;
+}
+
+.chair {
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+}
+
+.chair-standart {
+    border: 1px solid #393939;
+    background-color: rgb(196, 196, 196);
+}
+
+.chair-disabled {
+    border: 1px solid grey;
+}
+
+.chair-vip {
+    border: 1px solid #0A828A;
+    background-color: #B0D6D8
+}
+
+.poster {
+    width: 50px;
+    height: 50px;
+}

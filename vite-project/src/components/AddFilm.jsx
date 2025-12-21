@@ -59,8 +59,7 @@ export const AddFilm = () => {
                 <label htmlFor="floatingTract" className="form-label">
                     Описание фильма
                 </label>
-                <input 
-                    type="text" 
+                <textarea 
                     className="form-control" 
                     id="floatingTract"
                     name="description" 

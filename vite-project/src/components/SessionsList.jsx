@@ -9,6 +9,7 @@ import {Login} from "./Login"
 export const SessionsList = () => {
     let [sessions, setSessions] = useState([]);
     let navigate = useNavigate();
+    let [day, setDay] = useState(new Date());
 
     useEffect(() => {
         fetch('https://shfe-diplom.neto-server.ru/alldata')
@@ -22,6 +23,11 @@ export const SessionsList = () => {
             .catch(error => console.log(error));
     }, []);
 
+    const currentDate = (date) => {
+        setDay(date);
+        console.log(date)
+    }
+
         
     return (
         <div>
@@ -34,12 +40,12 @@ export const SessionsList = () => {
                  </div>
             </header>
             <div>
-                <Navigation />
+                <Navigation currentDate={currentDate} />
             </div>
             <div>
                 {sessions.films && sessions.films.map((item) => (
                     <div key={item.id} onClick={() => console.log(item)}>
-                        <Session film={item} all_data={sessions} />
+                        <Session film={item} all_data={sessions} day={day}/>
                     </div>
                 ))}
             </div>

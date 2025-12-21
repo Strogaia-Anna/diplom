@@ -22,7 +22,8 @@ export const Session = (props) => {
                 state: {
                     film: props.film,
                     hall,
-                    seance
+                    seance,
+                    day: props.day
                 }
             }
         )

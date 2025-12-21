@@ -16,27 +16,60 @@ export const Hall = () => {
                 state: {
                     film_name: state.film.film_name,
                     hall_name: state.hall.hall_name,
-                    seance_time: state.seance.seance_time,
-                    places
+                    seance: state.seance,
+                    places,
+                    day: state.day
                 }
             }
         )
     };
 
     // перепиши функцию, чтоб выбирала места (выбранные пользователем места)
+    // [
+    //     [1, [1,2], 200],
+    //     [5, [1,2], 200],
+    //     [1, [4,5], 200],
+    // ]
+
+    // [
+    //     {row: 1, place: 1, coast: 200},
+    //     {row: 1, place: 2, coast: 200},
+    //     {row: 2, place: 5, coast: 200},
+    //     {row: 2, place: 6, coast: 200},
+    //     {row: 1, place: 7, coast: 200},
+    // ]
+
+    // [
+    //     {row: 1, places: [1,2,4,5], price: 400},
+    //     {row: 5, places: [1,2], price: 200}
+    // ]
+
+    // {
+    //     1: {row: 1, places: [1,2,4,5], price: 400},
+    //     5: {row: 5, places: [1,2], price: 200}
+    // }
+
+    // {
+    //     1: [1,2,3],
+    //     5: [4,5]
+    // }
     const choosePlace = (row, place) => {
-        const placeObj = [row + 1];
-        let result = place;
+        let result = {row: row + 1}
+        
+        let ch_place = place;
         for (let i=0; i < place; i++) {
             if (state.hall.hall_config[row][i] == "disabled") {
-                result = result - 1;
+                ch_place -= 1;
             }
         }
-        placeObj.push(result + 1);
-        let choosenPlace = state.hall.hall_config[row][place];
-        let key = `hall_price_${choosenPlace}`;
-        placeObj.push(state.hall[key])
-        places.push(placeObj);
+
+        result["place"] = ch_place + 1;
+
+        let choosenPlaceType = state.hall.hall_config[row][place];
+        let key = `hall_price_${choosenPlaceType}`;
+        result["coast"] = state.hall[key];
+        places.push(result);
+
         setPlaces(places);
     }
 

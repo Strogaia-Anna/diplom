@@ -17,7 +17,9 @@ export const Navigation = (props) => {
         <div>
             {!!carInd && <div onClick={() => {
                 setDay(new Date(new Date().setDate(day.getDate() - 1)));
-                setCarInd(carInd - 1)}}>{"<"}</div>}
+                setCarInd(carInd - 1);
+                props.currentDate(day);
+            }}>{"<"}</div>}
             {!carInd && <div>Сегодня {getDayDetails(0)}</div>}
             <div>{getDayDetails(1)}</div>
             <div>{getDayDetails(2)}</div>
@@ -26,7 +28,8 @@ export const Navigation = (props) => {
             <div>{getDayDetails(5)}</div>
             <div onClick={() => {
                 setDay(new Date(new Date().setDate(day.getDate() + 1)));
-                setCarInd(carInd + 1)
+                setCarInd(carInd + 1);
+                props.currentDate(day);
             }}>{">"}</div>
         </div>
     )

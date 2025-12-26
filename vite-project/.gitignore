@@ -8,9 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
-dist
+
 vite-project/node_modules
-vite-project/dist
+
 
 dist-ssr
 *.local

@@ -1,0 +1,48 @@
+.session {
+    margin-top: 35px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+}
+
+.img {
+    width: 100%;
+}
+
+.text {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+}
+
+.session-seance {
+    width: auto;
+    background-color: white;
+    margin-right: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.filx-text {
+    position: relative;
+}
+
+.black-item {
+    background: #393939;
+    width: 6px;
+    height: 15px;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+
+}
+
+.seances-container {
+    padding-left: 25px;
+}
+
+.seance-disabled {
+    color: gray;
+    background-color: lightgray;
+}

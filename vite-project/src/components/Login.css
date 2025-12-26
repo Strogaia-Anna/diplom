@@ -1,25 +1,11 @@
-/* @media (min-width: 992px) {
-    .container {
-        min-width: 972px
-    }
-    
-} */
+.main-container {
+    max-width: 1000px;
+}
 
 .section {
-    /* width: 480px; */
     height: 294px;
 }
 
-.authorization {
-    background-color: rgba(99, 83, 108, 1);
-    color: white;
-}
-
-.form {
+.auth_form {
     background-color:rgba(224, 223, 225, 1);
-}
-
-.auth_btn {
-    background-color: rgba(22, 166, 175, 1);
-    color: white;
 }

@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import { Session } from "./Session"
 import { Navigation } from "./Navigation"
-import {Login} from "./Login"
-// import S from "./Posts.module.css"
+import "./SessionsList.css"
 
 export const SessionsList = () => {
+    const body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url("/guest.jpg")';
+
     let [sessions, setSessions] = useState([]);
     let navigate = useNavigate();
     let [day, setDay] = useState(new Date());
@@ -30,16 +31,16 @@ export const SessionsList = () => {
 
         
     return (
-        <div>
-            <header className="header">
-                 <div className="header-container">
-                    <div className="header-row">
-                        Идёмвкино
-                        <button className="button" type="button" onClick={() => navigate("/login")}>ВОЙТИ</button>
+        <div className="container guest">
+            <header className="header"> 
+                <div className="row header-top">
+                    <div className="home" onClick={() => navigate('/sessions')}>
+                        <span>ИДЁМ</span><span className="letterV">B</span><span>КИНО</span>
                     </div>
-                 </div>
+                    <button className="home confirm-btn" onClick={() => navigate("/login")}>ВОЙТИ</button>
+                </div>
             </header>
-            <div>
+            <div className="navigation">
                 <Navigation currentDate={currentDate} />
             </div>
             <div>

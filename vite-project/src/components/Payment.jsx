@@ -1,7 +1,10 @@
 import { useLocation, useNavigate } from 'react-router'
+import "./Payment.css"
 
 export const Payment = () => {
-    "6 ряд - 7,8; 7 ряд - 5, 6"
+    const body = document.getElementsByTagName('body')[0];
+    body.style.backgroundImage = 'url("/guest.jpg")';
+
     let navigate = useNavigate();
     const { state } = useLocation();
 
@@ -23,7 +26,7 @@ export const Payment = () => {
     const onClick = () => {
         const params = new FormData();
         params.set('seanceId', state.seance.id);
-        params.set('ticketDate', state.day.toISOString().split('T')[0]);
+        params.set('ticketDate', state.day);
         params.set('tickets', JSON.stringify(state.places));
 
         fetch(
@@ -35,6 +38,7 @@ export const Payment = () => {
         ).then(response => {
             return response.json();
         }).then(data => {
+            console.log(data.result);
             if (data.success) {
                 navigate(
                     "/ticket",
@@ -43,12 +47,15 @@ export const Payment = () => {
                             film_name: state.film_name,
                             hall_name: state.hall_name,
                             seance_time: state.seance.seance_time,
-                            places: data.result
+                            places: data.result,
+                            day: state.day
                         }
                     }
                 )
+            } else {
+                alert(data.error);
             }
-            console.log(data.result);
+            
             
         }).catch(error => {
             console.log(error)
@@ -56,36 +63,48 @@ export const Payment = () => {
     };
 
     return (
-        <div className="container">
-            <header className="header">
-                ИДЁМ В КИНО
+        <div className="payment container col-lg-12 col-md-12 col-sm-12">
+            <header className="header"> 
+                <div className="row header-top">
+                    <div className="home" onClick={() => navigate('/sessions')}>
+                        <span>ИДЁМ</span><span className="letterV">B</span><span>КИНО</span>
+                    </div>
+                </div>
             </header>
-            <main>
-                <div className="header">
+            <div>
+                <div className="top-border"></div>
+                <div className="main-header main-back">
                     ВЫ ВЫБРАЛИ БИЛЕТЫ:
                 </div>
-                <div>
-                    На фильм: {state.film_name}
+                <div className="bottom-border"></div>
+                <div className="top-border"></div>
+                <div className="main-back">
+                    <div>
+                        На фильм: <strong>{state.film_name}</strong>
+                    </div>
+                    <div>
+                        Места: <strong>{places}</strong>
+                    </div>
+                    <div>
+                        В зале: <strong>{state.hall_name}</strong>
+                    </div>
+                    <div>
+                        Начало сеанса: <strong>{state.seance.seance_time}</strong>
+                    </div>
+                    <div>
+                        Стоимость: <strong>{price}</strong> рублей
+                    </div>
+                    <div className="buttons">
+                        <button className="btn confirm-btn" onClick={() => onClick()}>ПОЛУЧИТЬ КОД БРОНИРОВАНИЯ</button>
+                    </div>
+                    <div>
+                        <span>После оплаты билет будет доступен в этом окне, а также придёт вам на почту. Покажите QR-код нашему котролёру у входа в зал.</span>
+                        <br/>
+                        <span>Приятного просмотра!</span>
+                    </div>
                 </div>
-                <div>
-                    Места: {places}
-                </div>
-                <div>
-                    В зале: {state.hall_name}
-                </div>
-                <div>
-                    Начало сеанса: <strong>{state.seance.seance_time}</strong>
-                </div>
-                <div>
-                    Стоимость: {price}
-                </div>
-                <button className="col-lg-2 col-md-3 col-sm-4 offset-lg-4 offset-md-4 offset-sm-4" onClick={() => onClick()}>
-                    Получить код бронирования
-                </button>
-                <div>
-                    После оплаты билет будет доступен в этом окне, а также придёт вам на почту. Покажите QR-код нашему котролёру у входа в зал. Приятного просмотра!
-                </div>
-            </main>
+                <div className="bottom-border"></div>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,15 @@
+.file-input {
+    display: none;
+}
+
+.buttons-container .file-input-btn {
+    color: white;
+    font-weight: 500;
+    padding-top: 15px;
+    font-size: 14px;
+}
+
+.buttons-container .file-input-btn:hover {
+    color: #212529;
+    border-color: #646cff;
+}

@@ -1,0 +1,98 @@
+.main-header {
+    margin: 0 15px 15px 15px;
+}
+
+.choice-of-location {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
+.booking .main-back {
+    padding-top: 15px;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.screen-img {
+    width: 100%;
+}
+
+.hall-and-legend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.choice-of-location {
+    .chair {
+        border: 1px solid #525252;
+    }
+
+    .chair-standart {
+        background-color: white;
+    }
+
+    .chair-vip {
+        background-color: #F9953A;
+    }
+
+    .chair-disabled {
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+    
+    .chair-selected {
+        background-color: #25C4CE;
+        box-shadow: 0 0 4px #16A6AF;
+    }
+
+    .legend {
+        margin-top: 25px;
+    }
+
+    .legend-item {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 14px;
+        font-weight: 300;
+    }
+
+    .legend-item span {
+        line-height: 30px;
+    }
+}
+
+.main-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.main-footer button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.tap {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+
+    img {
+        width: 24px;
+        height: 32px;
+    }
+
+    div {
+        text-align: center;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}

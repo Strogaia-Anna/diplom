@@ -35,6 +35,10 @@ section:first-child .section-header .sign .circle {
     justify-content: space-between;
     width: calc(100% - 44px);
     padding-left: 20px;
+
+    .chevron::before {
+        top: 0;
+    }
 }
 
 .sign {

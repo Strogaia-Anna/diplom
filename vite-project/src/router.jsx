@@ -16,10 +16,9 @@ export const router = createBrowserRouter([
         path: "/",
         exact: true,
         element: <Main/>,
-
         children: [
             {
-                path: "/sessions",
+                index: true,
                 exact: true,
                 element: <SessionsList/>,
             },

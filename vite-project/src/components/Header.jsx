@@ -14,7 +14,9 @@ export const Header = (props) => {
                 </div>
                 <div className="section-header-content">
                     <span className="header-text">{props.text}</span>
-                    <div className="toggle-btn"onClick={() => setIsOpen(!IsOpen)}>{IsOpen ? "˅" : ">"}</div>
+                    <div className="toggle-btn"onClick={() => setIsOpen(!IsOpen)}>
+                        <div className={`chevron chevron-${IsOpen ? "bottom" : "right"}`}></div>
+                    </div>
                 </div>
                 
             </div>

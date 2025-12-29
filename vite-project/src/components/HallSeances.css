@@ -3,3 +3,23 @@
     border: 1px solid black;
     padding: 10px 0;
 }
+
+.time-line {
+    .seance-time {
+        position: relative;
+        text-align: center;
+        color: #848484;
+        font-size: 12px;
+        padding: 0;
+
+        span {
+            margin-left: -100%;
+        }
+    }
+
+    .time-mark {
+        width: 2px;
+        height: 6px;
+        background-color: #848484;
+    }
+}

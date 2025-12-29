@@ -8,6 +8,9 @@
     height: 48px;
     border: 1px solid transparent;
     box-sizing: border-box;
+
+    /* .chev-right:before { content:"\2039"; } */
+    .chev-right:after  { content:"\203A"; }
 }
 
 .car-item-selected {
@@ -18,4 +21,8 @@
     border: 1px solid transparent;
     box-sizing: border-box;
     font-weight: bold;
+}
+
+.red-day {
+    color: red;
 }
